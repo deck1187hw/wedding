@@ -26,7 +26,19 @@ module.exports = function (grunt) {
 
     // Project settings
     yeoman: appConfig,
-
+	less: {
+      development: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2
+        },
+        files: {
+          // target.css file: source.less file
+          "app/styles/main.css": "app/less/main.less"
+        }
+      }
+    },
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -45,8 +57,11 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+        files: ['<%= yeoman.app %>/styles/{,*/}*.css','app/less/**/*.less'],
+        tasks: ['less','newer:copy:styles', 'autoprefixer'],
+        options: {
+          nospawn: true
+        }
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -405,4 +420,9 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+  
+  
+  grunt.loadNpmTasks('grunt-contrib-less');
+  
+  
 };
