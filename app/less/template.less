@@ -2,29 +2,66 @@ html{
 	height: 100%;
 }
 body{
-	background: @brand-primary;
+	background: #f9f9f9;
 	font-family: "futura-pt";
 	height: 100%;
 	font-size: 18px;
+	line-height: 140%;
+	color: @lowlight;
 	font-weight: 400;
 
 }
 
+::selection {
+  background:@morning-light;
+  color: @lowlight; 
+  .text-shadow(0 1px 3px rgba(255, 255, 255, 0.25));
+}
+::-moz-selection {
+  background:@morning-light; 
+  color: @lowlight;
+  .text-shadow(0 1px 3px rgba(255, 255, 255, 0.25));
+}
+
+#head{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: @brand-primary;
+	#mainav{
+		margin: auto;
+
+		li{
+			font-size: 140%;
+			text-transform: uppercase;
+			font-weight: 200;
+			&.active{
+				a{
+					background: darken(@brand-primary,10%);
+					.inner-shadow();
+				}
+			}
+			a{
+				color: white;
+				.text-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
+				
+				
+				&:hover{
+					background: darken(@brand-primary,10%);
+					.inner-shadow();
+
+				}
+			}
+		}
+	}
+}
 #main{
 	background: white;
-	margin-bottom: 60px;
-	height: 100%;
+	min-height: 100%;
 	
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  z-index: 10;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  color: white;
-  background: red;
-  text-align: center;
+h1{
+	font-size: 240%;
+	font-weight: 200;
+	color:darken(@brand-primary,10%);
 }

@@ -10,6 +10,8 @@
 angular.module('boda2App')
   .controller('MainCtrl', function ($scope, localStorageService) {
     
+    $scope.pageClass = 'page-main';
+    
 	var todosInStore = localStorageService.get('todos');
 	
 	$scope.todos = todosInStore && todosInStore.split('\n') || [];
@@ -28,5 +30,6 @@ angular.module('boda2App')
       $scope.todos.splice(index, 1);
     };
 	
+    
     
   });

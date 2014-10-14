@@ -27,28 +27,27 @@
 
     <!-- Add your site or application content here -->
     
+    <div id="head">
+    	<div class="container">
+    	
+        <ul class="nav nav-pills" id="mainav">
+          <li ng-class="getClass('/')"><a ng-href="#/">Home</a></li>
+          <li ng-class="getClass('/about')"><a ng-href="#/about">About</a></li>
+          <li ng-class="getClass('/guestlist')"><a ng-href="#/guestlist">Guest list</a></li>
+          <li ng-class="getClass('/blog')"><a ng-href="#/blog">Blog</a></li>
+        </ul>
+  
+    	</div>
+    </div>
+    
     
     <div class="container" id="main">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-          <li><a ng-href="#/guestlist">Guest list</a></li>
-          <li><a ng-href="#/blog">Blog</a></li>
-        </ul>
-        <h3 class="text-muted">boda2</h3>
-      </div>
 
-      <div ng-view=""></div>
+
+      <div anim-class class="view" ng-cloak ng-view=""></div>
 
 
     </div>
-
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
 
 
 
@@ -98,6 +97,7 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/guestlist.js"></script>
         <script src="scripts/controllers/blog.js"></script>
+        <script src="scripts/directives/animclass.js"></script>
         <!-- endbuild -->
 </body>
 </html>

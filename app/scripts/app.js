@@ -22,6 +22,17 @@ angular
     .config(['localStorageServiceProvider', function(localStorageServiceProvider){
     localStorageServiceProvider.setPrefix('ls');
   }])
+  .run(['$rootScope', '$location', function ($rootScope, $location) {
+
+	  	$rootScope.getClass = function(path) {
+		    if ($location.path().substr(0, path.length) === path) {
+		      return 'active';
+		    } else {
+		      return '';
+		    }
+		};
+
+  }])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -44,3 +55,5 @@ angular
         redirectTo: '/'
       });
   });
+
+

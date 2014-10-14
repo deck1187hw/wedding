@@ -1,0 +1,33 @@
+
+
+/* Transitions */
+
+/* Default Enter/Leave */
+
+.view{
+	&.ng-enter,
+	&.ng-leave {
+	    transition-timing-function: ease;
+	    transition-duration: 350ms;
+	    transition-property: opacity;
+	}
+	
+	&.ng-enter {
+	    opacity: 0;
+	}
+	
+	&.ng-enter.ng-enter-active {
+	    opacity: 1;
+	}
+	
+	&.ng-leave {
+	    opacity: 1;
+	}
+	
+	&.ng-leave.ng-leave-active {
+	    opacity: 0;
+	    display: none;
+	}
+
+}
+
