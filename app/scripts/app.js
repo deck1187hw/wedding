@@ -36,6 +36,10 @@ angular
         templateUrl: 'views/guestlist.html',
         controller: 'GuestlistCtrl'
       })
+      .when('/blog', {
+        templateUrl: 'views/blog.html',
+        controller: 'BlogCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
