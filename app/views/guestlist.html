@@ -1,1 +1,18 @@
 <p>This is the guestlist view.</p>
+
+
+<div id="guestList">
+	<ul class="list1">
+		<li class="col-md-2" ng-repeat="guest in listGuests track by $index">
+			<img class="img-circle" ng-src="{{guestImages}}{{guest.photo}}" />
+			<div class="name">{{guest.name}}</div>
+			<div class="relationship_name">{{guest.relationship_name}}</div>
+			<div class="country">{{guest.country_code}} {{guest.country_name}}</div>
+			<div class="side">{{guest.side}}</div>
+		</li>
+	</ul>
+
+
+</div>
+
+{{listGuests}}

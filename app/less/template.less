@@ -22,7 +22,10 @@ body{
   color: @lowlight;
   .text-shadow(0 1px 3px rgba(255, 255, 255, 0.25));
 }
-
+#top{
+	height: 20px;
+	background: @lowlight;
+}
 #head{
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -64,4 +67,35 @@ h1{
 	font-size: 240%;
 	font-weight: 200;
 	color:darken(@brand-primary,10%);
+}
+
+.languages{
+	float: right;
+	a{
+		color: white;
+		font-weight: 100;
+		padding: 10px;
+		&.active{
+			text-decoration: underline;
+
+		}
+	}
+}
+
+#guestList{
+	ul.list1{
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		li{
+			float: left;
+			height: 200px;
+			text-align: center;
+			overflow: hidden;
+			img{
+				width: 120px;
+				height: 120px;
+			}
+		}
+	}
 }

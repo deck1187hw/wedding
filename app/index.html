@@ -27,22 +27,27 @@
 
     <!-- Add your site or application content here -->
     
+    <div id="top"></div>
     <div id="head">
     	<div class="container">
     	
         <ul class="nav nav-pills" id="mainav">
-          <li ng-class="getClass('/')"><a ng-href="#/">Home</a></li>
+          <li ng-class="getClass('/')"><a ng-href="#/">{{ 'HOME' | translate }}</a></li>
           <li ng-class="getClass('/about')"><a ng-href="#/about">About</a></li>
-          <li ng-class="getClass('/guestlist')"><a ng-href="#/guestlist">Guest list</a></li>
-          <li ng-class="getClass('/blog')"><a ng-href="#/blog">Blog</a></li>
+          <li ng-class="getClass('/guestlist')"><a ng-href="#/guestlist">{{ 'GUEST_LIST' | translate }}</a></li>
+          <li ng-class="getClass('/blog')"><a ng-href="#/blog">{{ 'BLOG' | translate }}</a></li>
         </ul>
+
+		<div class="languages" ng-controller="LanguageCtrl">
+		    <a href ng-class="{'active': languageused == 'es-ES'}" ng-click="changeLanguage('es-ES')" translate="BUTTON_TEXT_ES"></a>
+			<a href ng-class="{active: languageused == 'en-US'}" ng-click="changeLanguage('en-US')" translate="BUTTON_TEXT_EN"></a>
+		</div>
   
     	</div>
     </div>
     
     
     <div class="container" id="main">
-
 
       <div anim-class class="view" ng-cloak ng-view=""></div>
 
@@ -88,6 +93,7 @@
     <script src="bower_components/angular-ui-sortable/sortable.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <script src="bower_components/less/dist/less-1.7.5.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -97,7 +103,8 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/guestlist.js"></script>
         <script src="scripts/controllers/blog.js"></script>
-        <script src="scripts/directives/animclass.js"></script>
+        <script src="scripts/controllers/language.js"></script>
+        <script src="scripts/services/guests.js"></script>
         <!-- endbuild -->
 </body>
 </html>
